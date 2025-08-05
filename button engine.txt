@@ -1,0 +1,11 @@
+this is a botton engine created by me LaxyDev64
+
+-part for sonic physics
+res://
+├── Player/
+│   ├── Sonic.tscn
+│   └── Sonic.gd
+├── Levels/
+│   └── GreenHill.tscn
+├── Scripts/
+│   └── Globals.gd
