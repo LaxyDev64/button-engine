@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://68j1stsllr43"]
+
+[ext_resource type="Script" uid="uid://coc2etx0m0uda" path="res://Scripts/menu.gd" id="1_xkckw"]
+[ext_resource type="Texture2D" uid="uid://dauphaul788p8" path="res://Sprite Assets/145882.png" id="2_4wowk"]
+[ext_resource type="Texture2D" uid="uid://cs37errw5mf1f" path="res://Sprite Assets/OldMPZPattern.png" id="3_3yuhj"]
+[ext_resource type="Texture2D" uid="uid://bkv7872hw7fmw" path="res://Sprite Assets/Emerald Hill Zone Tileset Mania.png" id="4_7f3cx"]
+[ext_resource type="Texture2D" uid="uid://ce7oeki6rcsqe" path="res://Sprite Assets/OldMenu.png" id="5_i357g"]
+[ext_resource type="Texture2D" uid="uid://2e1gaa0xsk0g" path="res://frame4.png" id="6_qlkgx"]
+[ext_resource type="AudioStream" uid="uid://b7o78tekukrek" path="res://Sprite Assets/DreamsIntoReality.ogg" id="7_ge38l"]
+[ext_resource type="FontFile" uid="uid://b41qt8dkwh14f" path="res://Font/NiseSegaSonic.TTF" id="8_8rnb2"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xkckw")
+
+[node name="145882" type="Sprite2D" parent="."]
+position = Vector2(726, 318)
+scale = Vector2(5.837838, 5.1200004)
+texture = ExtResource("2_4wowk")
+
+[node name="OldMpzPattern5" type="Sprite2D" parent="."]
+position = Vector2(1012, 528)
+scale = Vector2(1, 1.5546875)
+texture = ExtResource("3_3yuhj")
+
+[node name="OldMpzPattern4" type="Sprite2D" parent="."]
+position = Vector2(1139, 509)
+scale = Vector2(1, 1.7304688)
+texture = ExtResource("3_3yuhj")
+
+[node name="OldMpzPattern3" type="Sprite2D" parent="."]
+position = Vector2(885, 540)
+scale = Vector2(1, 1.5546875)
+texture = ExtResource("3_3yuhj")
+
+[node name="OldMpzPattern2" type="Sprite2D" parent="."]
+position = Vector2(756, 537)
+texture = ExtResource("3_3yuhj")
+
+[node name="OldMpzPattern" type="Sprite2D" parent="."]
+position = Vector2(628, 536)
+texture = ExtResource("3_3yuhj")
+
+[node name="EmeraldHillZoneTilesetMania" type="Sprite2D" parent="."]
+position = Vector2(693.00006, 487.00003)
+scale = Vector2(1.9765625, 1.953125)
+texture = ExtResource("4_7f3cx")
+region_enabled = true
+region_rect = Rect2(127, 0, 129, 36.5)
+
+[node name="EmeraldHillZoneTilesetMania2" type="Sprite2D" parent="."]
+position = Vector2(1201.0001, 418.00003)
+scale = Vector2(2.18, 1.773556)
+texture = ExtResource("4_7f3cx")
+region_enabled = true
+region_rect = Rect2(137.28168, 0, 118.71832, 36.5)
+
+[node name="OldMenu" type="Sprite2D" parent="."]
+position = Vector2(577, 324.5)
+scale = Vector2(2.7169812, 2.7208333)
+texture = ExtResource("5_i357g")
+
+[node name="Frame4" type="Sprite2D" parent="."]
+position = Vector2(715, 410)
+scale = Vector2(0.04219671, 0.048954755)
+texture = ExtResource("6_qlkgx")
+
+[node name="DreamsIntoReality" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1156, 501)
+stream = ExtResource("7_ge38l")
+autoplay = true
+parameters/looping = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 95.0
+offset_right = 490.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("8_8rnb2")
+text = "Hello :)"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 176.0
+offset_right = 493.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("8_8rnb2")
+text = "Credits :3"
+
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

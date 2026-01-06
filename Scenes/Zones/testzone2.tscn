@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxbjcce6btkj0"]
+
+[ext_resource type="Texture2D" uid="uid://b45au3qhych58" path="res://addons/kenney_prototype_textures/green/texture_08.png" id="1"]
+[ext_resource type="Script" uid="uid://blswiuydw5qtw" path="res://Scripts/testzone2.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cwqewly0w1pb7" path="res://addons/kenney_prototype_textures/red/texture_08.png" id="2_o443t"]
+[ext_resource type="Texture2D" uid="uid://dn55hfa3tfahn" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="2_p1sbw"]
+[ext_resource type="AudioStream" uid="uid://d0awgsq4k7nai" path="res://Sounds/05 - Windy Hill - Zone2.mp3" id="3_lecys"]
+[ext_resource type="Texture2D" uid="uid://dox3iegg6wggp" path="res://addons/kenney_prototype_textures/orange/texture_08.png" id="4_p1sbw"]
+[ext_resource type="Texture2D" uid="uid://bfhxbje827555" path="res://make-in-20-7-2025.png" id="4_rvkyk"]
+[ext_resource type="Texture2D" uid="uid://siotwcxm2xfp" path="res://button engine.png" id="5_o443t"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1149, 184)
+
+[node name="TestZone2" type="Node2D"]
+script = ExtResource("2")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(4795, 678.99994)
+rotation = -6.03199e-05
+scale = Vector2(9.858441, 4.9057894)
+texture = ExtResource("2_p1sbw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 1021.2499)
+
+[node name="hello" type="Sprite2D" parent="."]
+position = Vector2(273, 439)
+rotation = -0.7438563
+scale = Vector2(0.7125787, 0.6134616)
+texture = ExtResource("2_o443t")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="hello4" type="Sprite2D" parent="."]
+position = Vector2(1289, 413)
+rotation = -0.7438563
+scale = Vector2(0.7125787, 0.6134616)
+texture = ExtResource("2_o443t")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="hello2" type="Sprite2D" parent="."]
+position = Vector2(921.99994, 583)
+rotation = -2.0068834
+scale = Vector2(0.7125787, 0.6134616)
+texture = ExtResource("4_p1sbw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="hello3" type="Sprite2D" parent="."]
+position = Vector2(1810.9999, 619.00006)
+rotation = -2.0068834
+scale = Vector2(0.7125787, 0.6134616)
+texture = ExtResource("4_p1sbw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(480.337, 127.405)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Ground"]
+position = Vector2(94.662994, 431.09503)
+scale = Vector2(1.1313726, 0.7125983)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(95.162994, 431.595)
+shape = SubResource("1")
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2(480.337, 127.405)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Ground3"]
+position = Vector2(1249.6628, 428.59503)
+scale = Vector2(1.1313726, 0.7125983)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3"]
+position = Vector2(1248.663, 433.595)
+shape = SubResource("1")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(480.337, 127.405)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Ground2"]
+position = Vector2(446.66302, 201.595)
+scale = Vector2(0.30196077, 0.257874)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1020.6, 254.535)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lecys")
+autoplay = true
+parameters/looping = true
+
+[node name="MakeIn2072025" type="Sprite2D" parent="."]
+position = Vector2(148, 44)
+scale = Vector2(0.29492188, 0.2908745)
+texture = ExtResource("4_rvkyk")
+
+[node name="ButtonEngine" type="Sprite2D" parent="."]
+position = Vector2(419, 49)
+scale = Vector2(0.0623593, 0.05783449)
+texture = ExtResource("5_o443t")

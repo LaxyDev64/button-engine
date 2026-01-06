@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bddlr3h0550y3"]
+
+[ext_resource type="FontFile" uid="uid://b41qt8dkwh14f" path="res://Font/NiseSegaSonic.TTF" id="1"]
+[ext_resource type="Script" uid="uid://cqptkgosgli12" path="res://Scripts/titlescreen.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://siotwcxm2xfp" path="res://button engine.png" id="3_2bvko"]
+[ext_resource type="AudioStream" uid="uid://ddyq1bw7lrkj5" path="res://Sounds/01 - Wonder World - Title Theme -.mp3" id="4_5cqr0"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -19.0
+offset_right = 1159.0
+offset_bottom = 684.0
+color = Color(0.0196078, 0.0196078, 0.0901961, 1)
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 127.0
+offset_right = 104.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1")
+text = "Play"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -570.0
+offset_top = -31.0
+offset_right = -338.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Engine created by Laxydev64"
+
+[node name="versionlabel" type="Label" parent="."]
+layout_mode = 0
+text = "pre-alpha ver. 1"
+
+[node name="ButtonEngine" type="Sprite2D" parent="."]
+position = Vector2(561, 268.00003)
+scale = Vector2(0.12345162, 0.113636345)
+texture = ExtResource("3_2bvko")
+
+[node name="01WonderWorldTitleTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(485, 730)
+stream = ExtResource("4_5cqr0")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]

@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1kkuk3xb1xis"]
+
+[ext_resource type="Texture2D" uid="uid://k03d31w7q6mj" path="res://addons/kenney_prototype_textures/green/texture_03.png" id="1"]
+[ext_resource type="AudioStream" uid="uid://btmxmiphsbx8s" path="res://Sounds/03 - Windy Hill - Zone1.mp3" id="2_ay5k6"]
+[ext_resource type="Texture2D" uid="uid://dn55hfa3tfahn" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cahg356f52e6b" path="res://Custom _ Edited - Sonic the Hedgehog Customs - Backgrounds - Marble Zone Background (Tokyo Toy Show-Style).png" id="5_8vc7j"]
+[ext_resource type="Texture2D" uid="uid://bfhxbje827555" path="res://make-in-20-7-2025.png" id="6_4cdyg"]
+[ext_resource type="Script" uid="uid://cimiw53e8pf0" path="res://Scripts/testzone.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://siotwcxm2xfp" path="res://button engine.png" id="7_hjslt"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(194, 1105.432)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(111.2856, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ay5k6"]
+texture = ExtResource("1")
+texture_region_size = Vector2i(145, 139)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-72.5, -69.5, 72.5, -69.5, 72.5, 69.5, -72.5, 69.5)
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(72.5, -69.5, -72.5, -69.5, -72.5, 69.5, 72.5, 69.5)
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-72.5, 69.5, 72.5, 69.5, 72.5, -69.5, -72.5, -69.5)
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(72.5, 69.5, -72.5, 69.5, -72.5, -69.5, 72.5, -69.5)
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-69.5, -72.5, -69.5, 72.5, 69.5, 72.5, 69.5, -72.5)
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(69.5, -72.5, 69.5, 72.5, -69.5, 72.5, -69.5, -72.5)
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-69.5, 72.5, -69.5, -72.5, 69.5, -72.5, 69.5, 72.5)
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(69.5, 72.5, 69.5, -72.5, -69.5, -72.5, -69.5, 72.5)
+
+[sub_resource type="TileSet" id="4"]
+tile_size = Vector2i(145, 139)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ay5k6")
+
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(1137.9451, 176.2426)
+
+[node name="TestZone" type="Node2D"]
+script = ExtResource("7")
+
+[node name="CustomEditedSonicTheHedgehogCustomsBackgroundsMarbleZoneBackground(tokyoToyShowStyle)" type="Sprite2D" parent="."]
+position = Vector2(623.63074, 318)
+scale = Vector2(3.4677317, 2.9380531)
+texture = ExtResource("5_8vc7j")
+region_enabled = true
+region_rect = Rect2(1.0000229, 14.404968, 318.18192, 226.44635)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ay5k6")
+volume_db = -5.049
+autoplay = true
+parameters/looping = true
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Level"]
+position = Vector2(-115.817, -393.777)
+
+[node name="Sprite" type="Sprite2D" parent="Level/Wall"]
+position = Vector2(93.817, 611.777)
+scale = Vector2(0.7741313, 1)
+texture = ExtResource("3")
+region_enabled = true
+region_rect = Rect2(272.468, 22.044, 259.643, 1086.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall"]
+position = Vector2(91.817, 612.777)
+shape = SubResource("1")
+
+[node name="Platform" type="StaticBody2D" parent="Level"]
+position = Vector2(234.595, -118.981)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Level/Platform"]
+position = Vector2(407.405, 487.98102)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(97.5789, 47.5263, 110.526, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform"]
+position = Vector2(406.405, 487.98102)
+shape = SubResource("2")
+
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = SubResource("4")
+format = 2
+
+[node name="Ground" type="StaticBody2D" parent="Level"]
+position = Vector2(2590.7, 87.1866)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(-1958.2, 476.56342)
+scale = Vector2(1.3786057, 1.0371426)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(153.759, 210.638, 832.783, 175.692)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ground"]
+position = Vector2(-1951.6725, 473.81342)
+shape = SubResource("5")
+
+[node name="MakeIn2072025" type="Sprite2D" parent="."]
+position = Vector2(174, 48)
+scale = Vector2(0.2939453, 0.3403042)
+texture = ExtResource("6_4cdyg")
+
+[node name="ButtonEngine" type="Sprite2D" parent="."]
+position = Vector2(459, 48.999985)
+scale = Vector2(0.07010134, 0.068551324)
+texture = ExtResource("7_hjslt")
